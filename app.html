@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSpace — найди книгу по настроению</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">BookSpace</div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="#mood" class="nav__link">Подобрать книгу</a></li>
+                    <li class="nav__item"><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="#favorites" class="nav__link">Избранное</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+
+        <!-- Главный блок (Hero) -->
+        <section id="home" class="hero">
+            <div class="container hero__container">
+                <h1 class="hero__title">Найди книгу под своё настроение</h1>
+                <p class="hero__description">Удобный сервис для подростков и студентов. Выбирай истории, которые откликаются прямо сейчас.</p>
+                <a href="#mood" class="btn btn--primary hero__btn">Подобрать книгу</a>
+            </div>
+        </section>
+
+        <!-- Блок выбора настроения -->
+        <section id="mood" class="mood-section">
+            <div class="container">
+                <h2 class="section-title">Какое у вас сегодня настроение?</h2>
+                <div class="mood__grid">
+                    <button type="button" class="mood-card" data-mood="romance">Романтика</button>
+                    <button type="button" class="mood-card" data-mood="adventure">Приключения</button>
+                    <button type="button" class="mood-card" data-mood="think">Подумать</button>
+                    <button type="button" class="mood-card" data-mood="relax">Отдохнуть</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок каталога и фильтрации -->
+        <section id="catalog" class="catalog-section">
+            <div class="container">
+                <h2 class="section-title">Каталог книг</h2>
+                
+                <!-- Панель поиска и фильтрации -->
+                <div class="catalog-controls">
+                    <input type="text" id="search-input" class="search-input" placeholder="Поиск по названию книги...">
+                    <select id="genre-select" class="genre-select">
+                        <option value="all">Все жанры</option>
+                        <option value="romance">Романтика</option>
+                        <option value="adventure">Приключения</option>
+                        <option value="fiction">Фантастика</option>
+                        <option value="psychology">Психология</option>
+                    </select>
+                </div>
+
+                <!-- Список карточек книг -->
+                <div class="catalog__grid" id="catalog-grid">
+                    
+                    <!-- Карточка книги 1 -->
+                    <article class="book-card" data-genre="romance">
+                        <img src="placeholder.jpg" alt="Обложка книги" class="book-card__img">
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Накануне звезды</h3>
+                            <p class="book-card__author">Автор: Анна Снежная</p>
+                            <span class="book-card__genre">Романтика</span>
+                            <p class="book-card__desc">История о первой любви, летних ночах и надеждах на будущее.</p>
+                            <button type="button" class="btn btn--secondary book-card__fav-btn">В избранное</button>
+                        </div>
+                    </article>
+
+                    <!-- Карточка книги 2 -->
+                    <article class="book-card" data-genre="adventure">
+                        <img src="placeholder.jpg" alt="Обложка книги" class="book-card__img">
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Тайна заброшенного острова</h3>
+                            <p class="book-card__author">Автор: Максим Квест</p>
+                            <span class="book-card__genre">Приключения</span>
+                            <p class="book-card__desc">Захватывающие поиски сокровищ и опасные испытания в океане.</p>
+                            <button type="button" class="btn btn--secondary book-card__fav-btn">В избранное</button>
+                        </div>
+                    </article>
+
+                    <!-- Карточка книги 3 -->
+                    <article class="book-card" data-genre="fiction">
+                        <img src="placeholder.jpg" alt="Обложка книги" class="book-card__img">
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Код реальности</h3>
+                            <p class="book-card__author">Автор: Илья Бот</p>
+                            <span class="book-card__genre">Фантастика</span>
+                            <p class="book-card__desc">Что будет, если искусственный интеллект начнет управлять снами?</p>
+                            <button type="button" class="btn btn--secondary book-card__fav-btn">В избранное</button>
+                        </div>
+                    </article>
+
+                    <!-- Карточка книги 4 -->
+                    <article class="book-card" data-genre="psychology">
+                        <img src="placeholder.jpg" alt="Обложка книги" class="book-card__img">
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Искусство успевать</h3>
+                            <p class="book-card__author">Автор: Ольга Ментал</p>
+                            <span class="book-card__genre">Психология</span>
+                            <p class="book-card__desc">Простые техники тайм-менеджмента для студентов и школьников.</p>
+                            <button type="button" class="btn btn--secondary book-card__fav-btn">В избранное</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок «Избранное» -->
+        <section id="favorites" class="favorites-section">
+            <div class="container">
+                <h2 class="section-title">Избранное</h2>
+                <div class="favorites__grid" id="favorites-grid">
+                    <p class="favorites__empty">Ваш список избранного пока пуст.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <p class="footer__text">&copy; 2026 BookSpace. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
