@@ -1,0 +1,376 @@
+/* ==========================================
+   1. ОСНОВНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
+   ================================---------- */
+:root {
+    --bg-main: #E9EEF4;
+    --bg-card: #FFFFFF;
+    --text-main: #304A66;
+    --bg-secondary: #D9E3E8;
+    --text-muted: #667085;
+    --accent-hover: #1d334a;
+    --shadow: 0 4px 12px rgba(48, 74, 102, 0.08);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Общие стили для кнопок */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn--primary {
+    background-color: var(--text-main);
+    color: var(--bg-card);
+}
+
+.btn--primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-main);
+}
+
+.btn--secondary:hover {
+    background-color: #cbd8e0;
+}
+
+/* Общие заголовки секций */
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-main);
+}
+
+
+/* ==========================================
+   2. ШАПКА САЙТА И НАВИГАЦИЯ
+   ================================---------- */
+.header {
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav__link:hover {
+    color: var(--text-main);
+}
+
+
+/* ==========================================
+   3. ГЛАВНЫЙ БЛОК (HERO)
+   ================================---------- */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero__container {
+    max-width: 700px;
+}
+
+.hero__title {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.hero__description {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   4. БЛОК ВЫБОРА НАСТРОЕНИЯ
+   ================================---------- */
+.mood-section {
+    padding: 60px 0;
+}
+
+.mood__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.mood-card {
+    background-color: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.mood-card:hover {
+    border-color: var(--text-main);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(48, 74, 102, 0.12);
+}
+
+
+/* ==========================================
+   5. ПОЛЕ ПОИСКА И ФИЛЬТР ЖАНРОВ
+   ================================---------- */
+.catalog-section {
+    padding: 60px 0;
+}
+
+.catalog-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input,
+.genre-select {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1px solid var(--bg-secondary);
+    border-radius: var(--radius);
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-input:focus,
+.genre-select:focus {
+    border-color: var(--text-main);
+    box-shadow: 0 0 0 3px rgba(48, 74, 102, 0.1);
+}
+
+
+/* ==========================================
+   6. КАРТОЧКИ КНИГ
+   ================================---------- */
+.catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(48, 74, 102, 0.15);
+}
+
+.book-card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--bg-secondary);
+}
+
+.book-card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.book-card__author {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.book-card__genre {
+    display: inline-block;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+}
+
+.book-card__desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Кнопка добавления в избранное внутри карточки */
+.book-card__fav-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+
+/* ==========================================
+   7. БЛОК ИЗБРАННОГО
+   ================================---------- */
+.favorites-section {
+    padding: 60px 0;
+}
+
+.favorites__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.favorites__empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 16px;
+    padding: 40px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* ==========================================
+   8. ПОДВАЛ САЙТА
+   ================================---------- */
+.footer {
+    background-color: var(--bg-card);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--bg-secondary);
+    margin-top: 40px;
+}
+
+.footer__text {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+
+/* ==========================================
+   9. АДАПТИВНОСТЬ (MEDIA QUERIES)
+   ================================---------- */
+@media (max-width: 768px) {
+    /* Шапка и навигация для мобильных */
+    .header__container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav__list {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Главный блок */
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero__title {
+        font-size: 28px;
+    }
+
+    /* Элементы управления каталогом */
+    .catalog-controls {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+}
