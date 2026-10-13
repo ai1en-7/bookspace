@@ -1,31 +1,26 @@
-/* ==========================================
-   1. ОСНОВНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
-   ================================---------- */
+/* CSS-переменные: лавандово-молочная палитра BookSpace */
 :root {
-    --bg-main: #E9EEF4;
+    --bg-page: #F7F3FA;
     --bg-card: #FFFFFF;
-    --text-main: #304A66;
-    --bg-secondary: #D9E3E8;
-    --text-muted: #667085;
-    --accent-hover: #1d334a;
-    --shadow: 0 4px 12px rgba(48, 74, 102, 0.08);
-    --radius: 12px;
-    --transition: all 0.3s ease;
+    --color-primary: #8D7BA8;
+    --color-hover: #75618F;
+    --color-secondary: #E8DDEC;
+    --color-accent: #F1E4EA;
+    --text-main: #393044;
+    --text-muted: #766D7E;
+    --border-color: #E6DDEB;
 }
 
+/* Базовые стили */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.6;
 }
@@ -37,59 +32,15 @@ body {
     padding: 0 20px;
 }
 
-/* Общие стили для кнопок */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn--primary {
-    background-color: var(--text-main);
-    color: var(--bg-card);
-}
-
-.btn--primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-}
-
-.btn--secondary {
-    background-color: var(--bg-secondary);
-    color: var(--text-main);
-}
-
-.btn--secondary:hover {
-    background-color: #cbd8e0;
-}
-
-/* Общие заголовки секций */
-.section-title {
-    font-size: 28px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-main);
-}
-
-
-/* ==========================================
-   2. ШАПКА САЙТА И НАВИГАЦИЯ
-   ================================---------- */
+/* 1. Шапка и навигация */
 .header {
     background-color: var(--bg-card);
-    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(57, 48, 68, 0.02);
 }
 
 .header__container {
@@ -99,278 +50,278 @@ body {
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--text-main);
-    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
 }
 
 .nav__list {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav__link {
     text-decoration: none;
-    color: var(--text-muted);
+    color: var(--text-main);
     font-weight: 500;
-    transition: var(--transition);
+    transition: color 0.2s ease;
 }
 
 .nav__link:hover {
-    color: var(--text-main);
+    color: var(--color-primary);
 }
 
-
-/* ==========================================
-   3. ГЛАВНЫЙ БЛОК (HERO)
-   ================================---------- */
+/* 2. Главный блок с заголовком и кнопкой */
 .hero {
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
-}
-
-.hero__container {
-    max-width: 700px;
+    background-color: var(--color-accent);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero__title {
-    font-size: 38px;
-    font-weight: 800;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
     color: var(--text-main);
-    line-height: 1.2;
 }
 
 .hero__description {
-    font-size: 16px;
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto 25px;
 }
 
+/* Кнопки общей стилизации */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
 
-/* ==========================================
-   4. БЛОК ВЫБОРА НАСТРОЕНИЯ
-   ================================---------- */
+.btn--primary {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.btn--primary:hover {
+    background-color: var(--color-hover);
+}
+
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: var(--text-main);
+}
+
+.btn--secondary:hover {
+    background-color: var(--border-color);
+}
+
+/* 3. Блок выбора настроения */
 .mood-section {
-    padding: 60px 0;
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--text-main);
 }
 
 .mood__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
 .mood-card {
     background-color: var(--bg-card);
-    border: 2px solid transparent;
-    border-radius: var(--radius);
-    padding: 25px;
-    font-size: 18px;
-    font-weight: 600;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: var(--text-main);
-    box-shadow: var(--shadow);
     cursor: pointer;
-    transition: var(--transition);
     text-align: center;
+    box-shadow: 0 2px 6px rgba(57, 48, 68, 0.03);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .mood-card:hover {
-    border-color: var(--text-main);
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(48, 74, 102, 0.12);
+    background-color: var(--color-secondary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
-
-/* ==========================================
-   5. ПОЛЕ ПОИСКА И ФИЛЬТР ЖАНРОВ
-   ================================---------- */
+/* 5. Поле поиска и фильтр жанров */
 .catalog-section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .catalog-controls {
     display: flex;
     gap: 15px;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-.search-input,
-.genre-select {
-    flex: 1;
-    padding: 12px 16px;
-    font-size: 15px;
-    border: 1px solid var(--bg-secondary);
-    border-radius: var(--radius);
+.search-input, .genre-select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     background-color: var(--bg-card);
     color: var(--text-main);
+    font-size: 1rem;
     outline: none;
-    transition: var(--transition);
+    transition: border-color 0.2s ease;
 }
 
-.search-input:focus,
-.genre-select:focus {
-    border-color: var(--text-main);
-    box-shadow: 0 0 0 3px rgba(48, 74, 102, 0.1);
+.search-input:focus, .genre-select:focus {
+    border-color: var(--color-primary);
 }
 
+.search-input {
+    flex: 1;
+    min-width: 250px;
+}
 
-/* ==========================================
-   6. КАРТОЧКИ КНИГ
-   ================================---------- */
 .catalog__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
+/* 4. Карточки книг и их изображения */
 .book-card {
     background-color: var(--bg-card);
-    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(57, 48, 68, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .book-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(48, 74, 102, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(57, 48, 68, 0.08);
 }
 
 .book-card__img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background-color: var(--bg-secondary);
+    background-color: var(--color-secondary);
 }
 
 .book-card__content {
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex: 1;
 }
 
 .book-card__title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 6px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
     color: var(--text-main);
 }
 
 .book-card__author {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 10px;
 }
 
 .book-card__genre {
     display: inline-block;
-    background-color: var(--bg-main);
+    font-size: 0.8rem;
+    background-color: var(--color-accent);
     color: var(--text-main);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
     align-self: flex-start;
 }
 
 .book-card__desc {
-    font-size: 14px;
+    font-size: 0.95rem;
     color: var(--text-muted);
-    margin-bottom: 20px;
-    flex-grow: 1;
+    margin-bottom: 15px;
+    flex: 1;
 }
 
-/* Кнопка добавления в избранное внутри карточки */
+/* 6. Кнопки добавления в избранное */
 .book-card__fav-btn {
-    width: 100%;
-    margin-top: auto;
+    align-self: stretch;
+    text-align: center;
 }
 
-
-/* ==========================================
-   7. БЛОК ИЗБРАННОГО
-   ================================---------- */
+/* 7. Блок избранного */
 .favorites-section {
-    padding: 60px 0;
+    padding: 40px 0 60px;
+    background-color: rgba(232, 221, 236, 0.3);
+    border-top: 1px solid var(--border-color);
 }
 
 .favorites__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .favorites__empty {
     grid-column: 1 / -1;
     text-align: center;
     color: var(--text-muted);
-    font-size: 16px;
-    padding: 40px;
-    background-color: var(--bg-card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    font-size: 1.1rem;
 }
 
-
-/* ==========================================
-   8. ПОДВАЛ САЙТА
-   ================================---------- */
+/* 8. Подвал сайта */
 .footer {
     background-color: var(--bg-card);
-    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
     text-align: center;
-    border-top: 1px solid var(--bg-secondary);
-    margin-top: 40px;
 }
 
 .footer__text {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-
-/* ==========================================
-   9. АДАПТИВНОСТЬ (MEDIA QUERIES)
-   ================================---------- */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    /* Шапка и навигация для мобильных */
     .header__container {
         flex-direction: column;
         gap: 15px;
     }
-
+    
     .nav__list {
-        gap: 15px;
+        gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    /* Главный блок */
-    .hero {
-        padding: 40px 0;
-    }
-
     .hero__title {
-        font-size: 28px;
+        font-size: 2rem;
     }
 
-    /* Элементы управления каталогом */
     .catalog-controls {
         flex-direction: column;
     }
-
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 25px;
+    
+    .search-input {
+        width: 100%;
     }
 }
